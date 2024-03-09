@@ -910,10 +910,10 @@ export interface ApiEventsRegionalStateEventsRegionalState
     row_3_block_2_text: Attribute.Text;
     row_3_block_2_link_text: Attribute.String;
     row_3_block_2_link_url: Attribute.String;
-    champion_image: Attribute.Media;
-    champion_title: Attribute.String;
-    champion_text: Attribute.Blocks;
-    champion_get_involved_link: Attribute.String;
+    featured_event_image: Attribute.Media;
+    featured_event_title: Attribute.String;
+    featured_event_text: Attribute.Blocks;
+    featured_event_get_involved_link: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
