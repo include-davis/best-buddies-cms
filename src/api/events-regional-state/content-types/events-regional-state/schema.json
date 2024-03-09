@@ -66,23 +66,24 @@
     "row_3_block_2_link_url": {
       "type": "string"
     },
-    "champion_image": {
+    "featured_event_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
-    "champion_title": {
+    "featured_event_title": {
       "type": "string"
     },
-    "champion_text": {
+    "featured_event_text": {
       "type": "blocks"
     },
-    "champion_get_involved_link": {
+    "featured_event_get_involved_link": {
       "type": "string"
     }
   }
