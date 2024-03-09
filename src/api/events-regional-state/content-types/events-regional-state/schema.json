@@ -1,0 +1,70 @@
+{
+  "kind": "singleType",
+  "collectionName": "events_regional_states",
+  "info": {
+    "singularName": "events-regional-state",
+    "pluralName": "events-regional-states",
+    "displayName": "Events-Regional-State",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "row_1_title": {
+      "type": "string"
+    },
+    "row_1_description": {
+      "type": "text"
+    },
+    "row_1_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "row_2_image_1": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "row_2_image_2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "row_3_title": {
+      "type": "string"
+    },
+    "row_3_description": {
+      "type": "blocks"
+    },
+    "row_3_block_2_text": {
+      "type": "text"
+    },
+    "row_3_block_2_link_text": {
+      "type": "string"
+    },
+    "row_3_block_2_link_url": {
+      "type": "string"
+    }
+  }
+}

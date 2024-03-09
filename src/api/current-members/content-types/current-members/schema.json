@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "current_memberss",
+  "info": {
+    "singularName": "current-members",
+    "pluralName": "current-memberss",
+    "displayName": "Current-Members"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "renewal_url": {
+      "type": "string"
+    },
+    "video_url": {
+      "type": "string"
+    },
+    "friendship_updates_url": {
+      "type": "string"
+    }
+  }
+}

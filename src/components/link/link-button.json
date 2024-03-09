@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_link_link_buttons",
+  "info": {
+    "displayName": "link_button",
+    "icon": "attachment"
+  },
+  "options": {},
+  "attributes": {
+    "display_text": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}
