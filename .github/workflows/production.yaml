@@ -1,0 +1,58 @@
+name: Production Deployment
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  deploy_staging:
+    name: Deploy Production
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: ${{ vars.ENV_URL }}
+
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      HOST: 0.0.0.0
+      ADMIN_JWT_SECRET: ${{ secrets.ADMIN_JWT_SECRET }}
+      API_TOKEN_SALT: ${{ secrets.API_TOKEN_SALT }}
+      APP_KEYS: ${{ secrets.APP_KEYS }}
+      CLOUDINARY_KEY: ${{ secrets.CLOUDINARY_KEY }}
+      CLOUDINARY_NAME: ${{ secrets.CLOUDINARY_NAME }}
+      TRANSFER_TOKEN_SALT: ${{ secrets.TRANSFER_TOKEN_SALT }}
+      DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+      DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
+      JWT_SECRET: ${{ secrets.JWT_SECRET }}
+      TOKEN_TRANSFER_SALT: ${{ secrets.TOKEN_TRANSFER_SALT }}
+      DATABASE_HOST: ${{ vars.DATABASE_HOST }}
+      DATABASE_NAME: ${{ vars.DATABASE_NAME }}
+      DATABASE_PORT: ${{ vars.DATABASE_PORT }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.11.1'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install railway
+        run: npm install -g @railway/cli@3.5.2
+
+      - name: Build Strapi
+        run: npm run build
+
+      - name: Deploy image to Railway
+        run: >
+          RAILWAY_TOKEN=${{ secrets.RAILWAY_TOKEN }}
+          railway up 
+          --service "strapi" 
+          -d
+
+      - name: Success
+        run: echo "🚀  Deploy successful 🚀 "
