@@ -65,6 +65,25 @@
     },
     "row_3_block_2_link_url": {
       "type": "string"
+    },
+    "champion_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "champion_title": {
+      "type": "string"
+    },
+    "champion_text": {
+      "type": "blocks"
+    },
+    "champion_get_involved_link": {
+      "type": "string"
     }
   }
 }
