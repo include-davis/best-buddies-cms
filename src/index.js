@@ -21,11 +21,11 @@ module.exports = {
         const listen_models = [
             "events", 
             "announcements", 
-            "current-members", 
-            "homepage", 
-            "members", 
+            "current_memberss", 
+            "homepages", 
+            "memberss", 
             "newsletters", 
-            "events-regional-state"
+            "events_regional_states"
         ]
 
         const listen_actions = [
@@ -39,6 +39,7 @@ module.exports = {
         if (listen_models.includes(model) && listen_actions.includes(action)) {
             await fetch(`https://staging.ucdbestbuddies.org/api/revalidate`)
             await fetch(`https://ucdbestbuddies.org/api/revalidate`)
+            console.log("REVALIDATING")
         }
       });
     },
