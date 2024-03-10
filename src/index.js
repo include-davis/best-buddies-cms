@@ -25,7 +25,9 @@ module.exports = {
             "homepages", 
             "memberss", 
             "newsletters", 
-            "events_regional_states"
+            "events_regional_states",
+            "about_ucds",
+            "about_intls"
         ]
 
         const listen_actions = [

@@ -788,6 +788,72 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAboutIntlAboutIntl extends Schema.SingleType {
+  collectionName: 'about_intls';
+  info: {
+    singularName: 'about-intl';
+    pluralName: 'about-intls';
+    displayName: 'about-intl';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    img1: Attribute.Media;
+    img2: Attribute.Media;
+    img3: Attribute.Media;
+    img4: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about-intl.about-intl',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about-intl.about-intl',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAboutUcdAboutUcd extends Schema.SingleType {
+  collectionName: 'about_ucds';
+  info: {
+    singularName: 'about-ucd';
+    pluralName: 'about-ucds';
+    displayName: 'about-ucd';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    img1: Attribute.Media;
+    img2: Attribute.Media;
+    img3: Attribute.Media;
+    img4: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about-ucd.about-ucd',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about-ucd.about-ucd',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
   collectionName: 'announcements';
   info: {
@@ -1053,6 +1119,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::about-intl.about-intl': ApiAboutIntlAboutIntl;
+      'api::about-ucd.about-ucd': ApiAboutUcdAboutUcd;
       'api::announcement.announcement': ApiAnnouncementAnnouncement;
       'api::current-members.current-members': ApiCurrentMembersCurrentMembers;
       'api::event.event': ApiEventEvent;
